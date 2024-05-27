@@ -94,7 +94,7 @@ class Tasks(models.Model):
     teacher_id = models.ForeignKey(Teachers, on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now=False, auto_now_add=False, default=timezone.now)
     end_date = models.DateTimeField(auto_now=False, auto_now_add=False)
-    task_theme = models.ForeignKey(Themes, on_delete=models.SET_NULL, related_name='task_theme')
+    task_theme = models.ForeignKey(Themes, on_delete=models.SET_NULL, related_name='task_theme', null=True, blank=True)
 
 
 class TasksMaterials(models.Model):
